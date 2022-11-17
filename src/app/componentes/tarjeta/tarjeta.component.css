@@ -1,0 +1,8 @@
+.tarjeta{
+    margin: 10px;
+    cursor: pointer;
+}
+.tarjeta:hover{
+    margin: 15px;
+    cursor: pointer;
+}
