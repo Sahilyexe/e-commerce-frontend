@@ -1,0 +1,30 @@
+[
+        { "id":"1",
+            "nombre" :"producto 1",
+            "descripcion" : "descripción 1",
+            "precio" : "10",
+            "cantidadStock" : "1",
+            "categoria": "categoria 1",
+            "fechaIngreso": "2022-10-01",
+            "thumbnail":"producto 1.jpg"
+           }, 
+           { "id":"2",
+           "nombre" :"producto 2",
+           "descripcion" : "descripción 2",
+           "precio" : "10",
+           "cantidadStock" : "1",
+           "categoria": "categoria 2",
+           "fechaIngreso": "2022-10-01",
+           "thumbnail":"producto 2.jpg"
+          },
+          { "id":"3",
+          "nombre" :"producto 3",
+          "descripcion" : "descripción 3",
+          "precio" : "10",
+          "cantidadStock" : "5",
+          "categoria": "categoria 3",
+          "fechaIngreso": "2022-10-01",
+          "thumbnail":"producto 3.jpg"
+         }
+           
+]
