@@ -9,8 +9,12 @@
           </span>
      Tu tiendita</a>
      <div class="carrito">
-      <span class="material-symbols-outlined icono">
+        <span class="material-symbols-outlined icono position-relative">
         shopping_cart
+        <span *ngIf="cantidadArticulos!=0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cantidad-articulos">
+        {{cantidadArticulos}}
+    <span class="visually-hidden">unread messages</span>
+  </span>
         </span>
      </div>
       <form class="d-flex" role="search">
