@@ -1,20 +1,12 @@
 
-    <div class="card mb-3 tarjeta" style="max-width: 540px;" >
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img [src]="'../../assets/Images/'+producto.thumbnail" class="img-fluid rounded-start" [alt]="producto.nombre">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{producto.nombre}}</h5>
-              <p class="card-text">{{producto.descripcion}}</p>
-         
-               <p class="card-text">{{producto.precio}}</p>
-               <button class="btn btn-primary" (click)="verProducto()">Ver</button>
+      <div class="card tarjeta" style="width: 18rem;">
+        <img [src]="'../../assets/Images/'+producto.thumbnail" class="card-img-top" [alt]="producto.nombre|titlecase">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.nombre|titlecase}}</h5>
+          <p class="card-text">{{producto.descripcion|titlecase}}</p>
+          <p class="card-text">{{producto.precio|currency}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <button class="btn btn-primary" (click)="verProducto()">Ver</button>
         </div>
       </div>
-
