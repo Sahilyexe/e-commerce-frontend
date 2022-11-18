@@ -1,0 +1,18 @@
+.carrito{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  
+   
+}
+.home{
+    display: inline-flex;
+    align-items: center;
+    margin-right: auto;
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Geneva, Verdana, sans-serif;
+}
+.icono{
+    font-size: 36px;
+    margin :5px;
+}
