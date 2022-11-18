@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
+import { FormsModule } from '@angular/forms';
 
 import { ProductosService } from './servicios/productos/productos.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
@@ -21,7 +22,7 @@ import { ListaProductosComponent } from './componentes/lista-productos/lista-pro
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule
   ],
   providers: [ProductosService],
   bootstrap: [AppComponent]

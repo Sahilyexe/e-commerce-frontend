@@ -6,7 +6,8 @@
             "cantidadStock" : "1",
             "categoria": "categoria 1",
             "fechaIngreso": "2022-10-01",
-            "thumbnail":"producto 1.jpg"
+            "thumbnail":"producto 1.jpg",
+            "imagen":"producto 1.jpg"
            }, 
            { "id":"2",
            "nombre" :"producto 2",
@@ -15,7 +16,8 @@
            "cantidadStock" : "1",
            "categoria": "categoria 2",
            "fechaIngreso": "2022-10-01",
-           "thumbnail":"producto 2.jpg"
+           "thumbnail":"producto 2.jpg",
+           "imagen":"producto 2.jpg"
           },
           { "id":"3",
           "nombre" :"producto 3",
@@ -24,7 +26,8 @@
           "cantidadStock" : "5",
           "categoria": "categoria 3",
           "fechaIngreso": "2022-10-01",
-          "thumbnail":"producto 3.jpg"
+          "thumbnail":"producto 3.jpg",
+          "imagen":"producto 3.jpg"
          }
            
 ]

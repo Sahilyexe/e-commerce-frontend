@@ -11,9 +11,19 @@ export class ProductosService {
   constructor() { }
 
   getProductos(){
-    console.log(this.productos)
     this.productos = Object.assign(this.productos,productosJson)
     return this.productos;
+  }
+  getProducto(id:string){
+    this.getProductos();
+    let producto :ProductoModel=new ProductoModel();
+     for( let i= 0; i< this.productos.length;i++){
+         producto= this.productos[i];
+         if(producto.id == id){
+          return producto;
+        } 
+     }
+   return producto;
   }
 
 }
