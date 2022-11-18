@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from '../../servicios/productos/productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjeta',
@@ -8,13 +9,11 @@ import { ProductosService } from '../../servicios/productos/productos.service';
   styleUrls: ['./tarjeta.component.css']
 })
 export class TarjetaComponent implements OnInit {
-  productos:ProductoModel[]= [];
-  constructor(private _servicioProducto:ProductosService) { 
-    this.productos=this._servicioProducto.getProductos();
-  }
+ @Input() producto:ProductoModel=new ProductoModel();
+  constructor() { }
 
   ngOnInit(): void {
     
   }
-  
+ 
 }

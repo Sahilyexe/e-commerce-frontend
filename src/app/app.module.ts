@@ -8,13 +8,15 @@ import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { ProductosService } from './servicios/productos/productos.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
+import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TarjetaComponent,
     ProductoComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    ListaProductosComponent
     
   ],
   imports: [
