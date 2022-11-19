@@ -11,6 +11,7 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 import { FinalizarCompraComponent } from './componentes/finalizar-compra/finalizar-compra.component';
+import { CarritoComponent } from './componentes/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FinalizarCompraComponent } from './componentes/finalizar-compra/finaliz
     ProductoComponent,
     NavegacionComponent,
     ListaProductosComponent,
-    FinalizarCompraComponent
+    FinalizarCompraComponent,
+    CarritoComponent
     
   ],
   imports: [

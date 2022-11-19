@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from '../../servicios/productos/productos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto',
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductoComponent implements OnInit {
   producto: ProductoModel= new ProductoModel()
   constructor(private _servicioProducto:ProductosService,
-              private activateRoute: ActivatedRoute) {
+              private activateRoute: ActivatedRoute,
+              private router:Router) {
               this.activateRoute.params.subscribe(params =>{
               
               this.producto = this._servicioProducto.getProducto(params['id'])
@@ -21,5 +22,7 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  irFinalizarCompra(){
+    this.router.navigate(['finalizar-compra'])
+  }
 }
