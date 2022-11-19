@@ -5,4 +5,17 @@
 }
 .componentes{
     margin: 5px;
+    width: 45%;
+}
+
+.componentes-checkout{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.direccion{
+    margin: 5px;
+    width: 91%;
 }

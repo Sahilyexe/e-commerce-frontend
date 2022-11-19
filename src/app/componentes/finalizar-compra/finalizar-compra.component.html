@@ -10,7 +10,7 @@
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body componentes-checkout">
               <div class="form-floating mb-3 componentes">
                 <input type="tel" class="form-control" id="telefono" placeholder="teléfono" required>
                 <label for="telefono">Teléfono o Whatsapp</label>
@@ -30,9 +30,57 @@
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-body  componentes-checkout">
+             
+              <div class="componentes-checkout">
+                <div class="form-floating mb-3 componentes">
+                  <input type="text" class="form-control " id="primerNombre" placeholder="Primer nombre" required>
+                  <label for="primerNombre">Primer nombre</label>
+                </div>
+                <div class="form-floating mb-3 componentes">
+                  <input type="text" class="form-control " id="SegundoNombre" placeholder="Segundo nombre">
+                  <label for="SegundoNombre">Segundo nombre</label>
+                </div>
+              </div>
+              <div class="componentes-checkout">
+                <div class="form-floating mb-3 componentes">
+                  <input type="text" class="form-control " id="PrimerApellido" placeholder="Primer apellido" required>
+                  <label for="PrimerApellido">Primer apellido</label>
+                </div>
+                <div class="form-floating mb-3 componentes">
+                  <input type="text" class="form-control " id="segundoApellido" placeholder="Segundo apellido">
+                  <label for="segundoApellido">Segundo apellido</label>
+                </div>
+              </div>
+              <div class="componentes-checkout">
+                <div class="form-floating mb-3 direccion">
+                  <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
+                  <label for="direccion">Dirección</label>
+                </div>
+              </div>
+              <div class="componentes-checkout">
+                <select class="form-select form-control componentes" aria-label="Default select example" required>
+                  <option selected disabled>Selecciona el país</option>
+                  <option value="1">Panamá</option>
+                </select>
+                <select class="form-select form-control componentes" aria-label="Default select example" required>
+                  <option selected disabled>Selecciona la provincia</option>
+                  <option value="1">Panamá</option>
+                  <option value="1">Bocas del Toro</option>
+                  <option value="1">Chiriquí</option>
+                  <option value="1">Coclé</option>
+                  <option value="1">Colón</option>
+                  <option value="1">Darien</option>
+                  <option value="1">Herrera</option>
+                  <option value="1">Panamá Oeste</option>
+                  <option value="1">Veraguas</option>
+                  <option value="1">Comarca Emberá-Wounaan</option>
+                  <option value="1">Comarca Ngäbe-Buglé</option>
+                  <option value="1">Guna Yala</option>
+                </select>
+              </div>
             </div>
+           
           </div>
         </div>
         <div class="accordion-item">
@@ -46,13 +94,13 @@
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                 <label class="form-check-label" for="flexRadioDefault1">
                   Efectivo
                 </label>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <div class="form-check" >
+                <input class="form-check-input" disabled type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
                 <label class="form-check-label" for="flexRadioDefault2">
                 Paypal 
                 </label>
@@ -60,7 +108,10 @@
             </div>
           </div>
         </div>
+        
       </div>
+    
     </div>
+    <button type="button" class="btn btn-success contenedor" >Pagar</button>
     <div class="col-4"></div>
 </div>
