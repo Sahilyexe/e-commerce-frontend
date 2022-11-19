@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
 }
+.centrar-texto{
+    justify-content: center;
+}
 .icono{
     font-size: 36px;
     margin :5px;
