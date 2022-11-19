@@ -1,0 +1,25 @@
+<div class="carrito" >
+    <span aria-describedby="carrito" class="material-symbols-outlined icono position-relative">
+    shopping_cart
+    <span *ngIf="cantidadArticulos!=0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cantidad-articulos">
+    {{cantidadArticulos}}
+<span class="visually-hidden">unread messages</span>
+</span>
+    </span>
+    <div  role="tooltip" id="carrito" >
+        <div class="triangulo" style="position: absolute; top: 0px; transform: translate3d(-19px, 2px, 0px);"></div>
+        <div class="popover card" >
+         <div class="card-header">
+            Confirmación de su pedido
+          </div>
+        <div class="card-body">
+         <div class="row">
+            <div class="col"><strong>Total del pedido:</strong></div>
+         </div>
+        </div>
+      </div> 
+    </div>   
+  </div>
+
+    
+ 

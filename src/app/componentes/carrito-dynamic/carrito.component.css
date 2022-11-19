@@ -1,0 +1,49 @@
+
+ .popover {
+     max-width: 400px;
+     min-width: 400px;
+     transform: translate3d(-200px, 20px, 0px)
+    }
+    .fade {
+        transition: opacity .15s linear;
+    }
+    .popover, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    [role="tooltip"],
+    .hidetooltip.hidetooltip.hidetooltip + [role="tooltip"] {
+      visibility: hidden;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    
+      
+    }
+.carrito{ 
+ position: absolute; 
+}
+
+[aria-describedby]:hover,
+[aria-describedby]:focus,[aria-describedby]:active  {
+  position: relative;
+}
+[aria-describedby]:hover + [role="tooltip"],
+[aria-describedby]:focus + [role="tooltip"],
+[aria-describedby]:active + [role="tooltip"],
+[aria-describedby]:active + [role="tooltip"]+.triangulo {
+  visibility: visible;
+}
+
+.triangulo{
+    width: 0;
+    height: 0;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid rgba(240, 240, 240, 240);
+    border-left: 15px solid transparent;
+   
+}
+
+.cantidad-articulos{
+    font-size: 10px;
+}

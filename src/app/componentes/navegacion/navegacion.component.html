@@ -8,15 +8,10 @@
           home
           </span>
      Tu tiendita</a>
-     <div class="carrito">
-        <span class="material-symbols-outlined icono position-relative">
-        shopping_cart
-        <span *ngIf="cantidadArticulos!=0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cantidad-articulos">
-        {{cantidadArticulos}}
-    <span class="visually-hidden">unread messages</span>
-  </span>
-        </span>
+     <div class="caja-carrito" (click)="verCarrito()">
+     <app-carrito-dynamic class="caja-carrito"></app-carrito-dynamic>
      </div>
+    
       <form class="d-flex" role="search">
         
         <input class="form-control me-2" type="search" placeholder="escribe aquí" aria-label="Search">
