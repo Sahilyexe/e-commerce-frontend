@@ -13,7 +13,7 @@
            "nombre" :"producto 2",
            "descripcion" : "descripción 2",
            "precio" : "10",
-           "cantidadStock" : "1",
+           "cantidadStock" : "2",
            "categoria": "categoria 2",
            "fechaIngreso": "2022-10-01",
            "thumbnail":"producto 2.jpg",

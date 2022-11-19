@@ -6,3 +6,8 @@
 .botones{
     margin: 5px;
 }
+.cantidad{
+    max-width: 100px;
+    
+    margin: 5px;
+}

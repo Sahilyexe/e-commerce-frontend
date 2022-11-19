@@ -18,10 +18,12 @@
           <div><strong>Descripción: </strong></div>
           <p>{{producto.descripcion|titlecase}}</p>
         </div>
+       
         </div>
+        <div> <input type="number" class="form-control cantidad" step="1" min="1" value="1" [max]="producto.cantidadStock"></div>
         <div class="row">
           <div class="display-botones">
-        <button class="btn btn-primary botones" >Agregar al carrito</button>
+          <button class="btn btn-primary botones" >Agregar al carrito</button>
         <button class="btn btn-success botones" >Comprar ahora</button>
         </div>
         </div>
