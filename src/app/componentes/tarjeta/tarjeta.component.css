@@ -3,6 +3,9 @@
     cursor: pointer;
 }
 .tarjeta:hover{
-    margin: 15px;
+    margin: 11px;
     cursor: pointer;
+}
+.botones-tarjeta{
+    margin: 5px;
 }

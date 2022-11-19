@@ -1,12 +1,13 @@
 
-      <div class="card tarjeta" style="width: 18rem;">
+      <div class="card tarjeta" style="width: 18rem;" (click)="verProducto()">
         <img [src]="'../../assets/Images/'+producto.thumbnail" class="card-img-top" [alt]="producto.nombre|titlecase">
         <div class="card-body">
-          <h5 class="card-title">{{producto.nombre|titlecase}}</h5>
+         <h5 class="card-title">{{producto.nombre|titlecase}}</h5>
           <p class="card-text">{{producto.descripcion|titlecase}}</p>
           <p class="card-text">{{producto.precio|currency}}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <button class="btn btn-success centrar-horizontal botones-tarjeta" ><span class="material-symbols-outlined">shopping_cart
+            </span>Agregar al carrito</button>
 
-          <button class="btn btn-primary" (click)="verProducto()">Ver</button>
         </div>
       </div>

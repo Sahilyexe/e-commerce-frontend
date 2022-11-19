@@ -10,6 +10,7 @@ import { ProductosService } from './servicios/productos/productos.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
+import { FinalizarCompraComponent } from './componentes/finalizar-compra/finalizar-compra.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListaProductosComponent } from './componentes/lista-productos/lista-pro
     TarjetaComponent,
     ProductoComponent,
     NavegacionComponent,
-    ListaProductosComponent
+    ListaProductosComponent,
+    FinalizarCompraComponent
     
   ],
   imports: [

@@ -1,0 +1,8 @@
+.display-botones{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+.botones{
+    margin: 5px;
+}
