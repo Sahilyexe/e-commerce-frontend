@@ -17,4 +17,7 @@ export class TarjetaComponent implements OnInit {
   verProducto(){
     this.router.navigate(['producto',this.producto.id]);
   }
+  agregarCarrito(){
+  
+  }
 }

@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule,HttpHeaders } from '@angular/common/http';
 
 import { ProductosService } from './servicios/productos/productos.service';
+import { SesionService } from './servicios/sesion/sesion.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
@@ -28,9 +30,9 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,HttpClientModule
   ],
-  providers: [ProductosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
