@@ -1,4 +1,5 @@
 <div class="container row">
+  <app-loading *ngIf="cargando"></app-loading>
     <div class="col-8">
 <div class="card separado" *ngFor="let elemento of orden.elementos">
     <div class="card-body">
@@ -9,10 +10,13 @@
             <figcaption>{{elemento.nombre | titlecase}}</figcaption>
           </figure> 
         </div>
+        <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}</div>
         <div class="col">{{elemento.descripcion |titlecase}}</div>
         <div class="col" >{{elemento.precio |currency}}</div>
-        <div class="col"><button class="btn btn-danger centrar-horizontal">
-          <span class="material-symbols-outlined ">
+        <div class="col"><button (click)="EliminarCarrito(elemento)"
+          class="btn btn-danger centrar-horizontal">
+          
+          <span class="material-symbols-outlined">
             delete
             </span>
           Eliminar

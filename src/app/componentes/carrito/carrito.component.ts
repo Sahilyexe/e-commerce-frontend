@@ -13,6 +13,7 @@ export class CarritoComponent implements OnInit {
  producto : ProductoModel= new ProductoModel();
  productos: ProductoModel[]=[]
  total:number = 0;
+ cargando:boolean = false;
   constructor(private _servicioCarrito: OrdenService) {
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
@@ -27,5 +28,13 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
    
   }
-
+  EliminarCarrito(id:ProductoModel){
+    this.cargando=true;
+    console.log(this.orden.elementos)
+    this.orden.elementos.splice(this.orden.elementos.indexOf(id),1)
+    console.log(this.orden.elementos)
+    this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
+        this.cargando=false;
+    })
+   }
 }
