@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-header">
+        Resumen
+      </div>
+    <div class="card-body">
+     <div class="row">
+        <div class="col"><strong>Total del pedido:</strong> {{totalPedido|currency}}</div>
+     </div>
+     <button *ngIf="mostrarBoton" class="btn btn-success centrar-horizontal centrar-texto">
+      <span class="material-symbols-outlined ">
+        shopping_cart_checkout
+        </span>
+      Comprar</button>
+    </div>
+  </div>    

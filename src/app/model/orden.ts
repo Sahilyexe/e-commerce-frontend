@@ -1,4 +1,5 @@
 import {ElementosOrdenModel} from './elementosOrden';
+import { ProductoModel } from './producto';
 export class OrdenModel{
 
     idOrden = "";
@@ -7,6 +8,6 @@ export class OrdenModel{
     metodoPago? = "";
     velocidadEntrega? = "";
     direccionEntrega? = "";
-    elementos: ElementosOrdenModel[]=[];
+    elementos: ProductoModel[]=[];
     constructor(){}
 }

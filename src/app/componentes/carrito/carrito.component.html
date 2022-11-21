@@ -1,1 +1,24 @@
-<div class="container card">Aqui se despliegan los items</div>
+<div class="container row">
+    <div class="col-8">
+<div class="card separado" *ngFor="let elemento of orden.elementos">
+    <div class="card-body">
+        <div class="row">
+        <div class="col">
+          <figure>
+            <img [src]="'../../assets/Images/'+elemento.thumbnail" >
+            <figcaption>{{elemento.nombre | titlecase}}</figcaption>
+          </figure> 
+        </div>
+        <div class="col">{{elemento.descripcion |titlecase}}</div>
+        <div class="col" >{{elemento.precio |currency}}</div>
+        </div>
+    
+    </div>
+  </div>
+</div>
+<div class="col-4">
+    <div class="separado">
+     <app-resumen [totalPedido]="total" [mostrarBoton]="true"></app-resumen>   
+    </div>
+</div>
+</div>

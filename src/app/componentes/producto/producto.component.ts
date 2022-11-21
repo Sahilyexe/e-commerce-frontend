@@ -40,12 +40,7 @@ export class ProductoComponent implements OnInit {
   }
   agregarCarrito(){
     this.cargando=true;
-    this.orden.elementos.push(new ElementosOrdenModel(
-     this.producto.nombre!,
-     this.producto.precio!,
-     1,
-     this.producto.categoria!
-    ))
+    this.orden.elementos.push(this.producto)
     this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
       this.cargando=false;
       //this.onPropagar(this.orden)

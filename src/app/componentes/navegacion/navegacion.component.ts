@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navegacion.component.css']
 })
 export class NavegacionComponent implements OnInit {
-  cantidadArticulos:number=1;
+  cantidadArticulos:number=0;
   constructor(private router:Router) {}
   
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
-import { SesionModel } from 'src/app/model/sesionModel';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
 import { OrdenService } from 'src/app/servicios/orden/orden.service';
 

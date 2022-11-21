@@ -13,11 +13,12 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 import { FinalizarCompraComponent } from './componentes/finalizar-compra/finalizar-compra.component';
-import { CarritoDinamicComponent } from './componentes/carrito-dynamic/carrito.component';
+import { CarritoDinamicComponent } from './componentes/compartido/carrito-dynamic/carritoDynamic.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
-import { LoadingComponent } from './componentes/loading/loading.component';
-import { AlertComponent } from './componentes/alert/alert.component';
-import { CargandoBotonComponent } from './componentes/cargando-boton/cargando-boton.component';
+import { LoadingComponent } from './componentes/compartido/loading/loading.component';
+import { AlertComponent } from './componentes/compartido/alert/alert.component';
+import { CargandoBotonComponent } from './componentes/compartido/cargando-boton/cargando-boton.component';
+import { ResumenComponent } from './componentes/compartido/resumen/resumen.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CargandoBotonComponent } from './componentes/cargando-boton/cargando-bo
     CarritoComponent,
     AlertComponent,
     LoadingComponent,
-    CargandoBotonComponent
+    CargandoBotonComponent,
+    ResumenComponent
   ],
   imports: [
     BrowserModule,
