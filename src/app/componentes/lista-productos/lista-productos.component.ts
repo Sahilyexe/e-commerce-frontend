@@ -3,7 +3,7 @@ import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
 import { SesionModel } from 'src/app/model/sesionModel';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
-import { SesionService } from 'src/app/servicios/sesion/sesion.service';
+import { OrdenService } from 'src/app/servicios/orden/orden.service';
 
 @Component({
   selector: 'app-lista-productos',
@@ -16,14 +16,14 @@ export class ListaProductosComponent implements OnInit {
  // producto: ProductoModel= new ProductoModel();
   
   constructor(private _servicioProducto:ProductosService,
-              private _servicioSesion: SesionService) { 
+              private _servicioSesion: OrdenService) { 
     this.productos=this._servicioProducto.getProductos();
 }
   ngOnInit(): void {
    let sesion =  sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
   if(sesion == null || sesion == undefined || sesion == '') {
-      this.orden.idOrden=this.generarAleatorio();
-      this._servicioSesion.crearSesion(JSON.stringify(this.orden)).subscribe(resp =>{
+      this.orden.idOrden=this.generarAleatorio().replace(' ','');
+      this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp =>{
       this.orden = Object.assign(resp)
       sessionStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',this.orden.idOrden)
      })

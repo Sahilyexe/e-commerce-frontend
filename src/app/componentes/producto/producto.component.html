@@ -23,9 +23,12 @@
         <div> <input type="number" class="form-control cantidad" step="1" min="1" value="1" [max]="producto.cantidadStock"></div>
         <div class="row">
           <div class="display-botones">
-          <button class="btn btn-primary botones centrar-horizontal centrar-texto" ><span class="material-symbols-outlined">
-            add_shopping_cart
-            </span>Agregar al carrito</button>
+          <button (click)="agregarCarrito()"
+            class="btn btn-primary botones centrar-horizontal centrar-texto" >
+            <app-cargando-boton *ngIf="cargando"></app-cargando-boton>
+            <span class="material-symbols-outlined">add_shopping_cart</span>
+            Agregar al carrito
+          </button>
         <button class="btn btn-success botones centrar-horizontal centrar-texto" (click)="irFinalizarCompra()">
           <span class="material-symbols-outlined ">
             payments
@@ -38,3 +41,4 @@
     </div>
   </div>
 </div>
+

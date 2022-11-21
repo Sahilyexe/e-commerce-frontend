@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HttpHeaders } from '@angular/common/http';
 
 import { ProductosService } from './servicios/productos/productos.service';
-import { SesionService } from './servicios/sesion/sesion.service';
+import { OrdenService } from './servicios/orden/orden.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
@@ -17,6 +17,7 @@ import { CarritoDinamicComponent } from './componentes/carrito-dynamic/carrito.c
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { LoadingComponent } from './componentes/loading/loading.component';
 import { AlertComponent } from './componentes/alert/alert.component';
+import { CargandoBotonComponent } from './componentes/cargando-boton/cargando-boton.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlertComponent } from './componentes/alert/alert.component';
     CarritoDinamicComponent,
     CarritoComponent,
     AlertComponent,
-    LoadingComponent
+    LoadingComponent,
+    CargandoBotonComponent
   ],
   imports: [
     BrowserModule,

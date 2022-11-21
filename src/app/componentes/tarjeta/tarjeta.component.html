@@ -1,16 +1,16 @@
 
-      <div class="card tarjeta" style="width: 18rem;" >
+      <div class="card tarjeta" style="width: 18rem;" (click)="verProducto()">
         <img [src]="'../../assets/Images/'+producto.thumbnail" class="card-img-top" [alt]="producto.nombre|titlecase">
         <div class="card-body">
-         <h5 (click)="verProducto()" class="card-title">{{producto.nombre|titlecase}}</h5>
+         <h5  class="card-title">{{producto.nombre|titlecase}}</h5>
           <p class="card-text">{{producto.descripcion|titlecase}}</p>
           <p class="card-text">{{producto.precio|currency}}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <button class="btn btn-success centrar-horizontal botones-tarjeta" (click)="agregarCarrito()">
+          <!-- <button class="btn btn-success centrar-horizontal botones-tarjeta" (click)="agregarCarrito()">
               <span class="material-symbols-outlined">
                 add_shopping_cart
               </span>Agregar al carrito
-          </button>
+          </button> -->
 
         </div>
       </div>
