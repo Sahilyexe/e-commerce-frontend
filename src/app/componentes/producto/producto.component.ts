@@ -3,7 +3,6 @@ import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from '../../servicios/productos/productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdenService } from 'src/app/servicios/orden/orden.service';
-import { ElementosOrdenModel } from 'src/app/model/elementosOrden';
 import { OrdenModel } from 'src/app/model/orden';
 
 @Component({

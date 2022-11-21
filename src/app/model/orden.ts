@@ -1,4 +1,3 @@
-import {ElementosOrdenModel} from './elementosOrden';
 import { ProductoModel } from './producto';
 export class OrdenModel{
 

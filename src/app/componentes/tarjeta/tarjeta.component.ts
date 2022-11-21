@@ -3,7 +3,6 @@ import { ProductoModel } from 'src/app/model/producto';
 import { Router } from '@angular/router';
 import { OrdenService } from 'src/app/servicios/orden/orden.service';
 import { OrdenModel } from 'src/app/model/orden';
-import { ElementosOrdenModel } from 'src/app/model/elementosOrden';
 
 @Component({
   selector: 'app-tarjeta',
