@@ -20,4 +20,8 @@ export class ResumenComponent implements OnInit {
   finalizarCompra(){
    this.router.navigate(['finalizar-compra'])
   }
+  seguirComprando(){
+    this.router.navigate(['productos'])
+
+  }
 }
