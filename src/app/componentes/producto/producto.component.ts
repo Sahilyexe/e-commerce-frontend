@@ -49,4 +49,7 @@ export class ProductoComponent implements OnInit {
   //   console.log('entro aqui')
   //   this.propagar.emit(orden);
   // }
+  seguirComprando(){
+    this.router.navigate(['productos'])
+  }
 }
