@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from '../../servicios/productos/productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,6 +12,9 @@ import { OrdenModel } from 'src/app/model/orden';
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent implements OnInit {
+  // @Output()
+  // propagar = new EventEmitter<OrdenModel>();
+
   producto: ProductoModel= new ProductoModel()
   cargando: boolean = false;
   orden: OrdenModel = new OrdenModel();
@@ -44,9 +47,12 @@ export class ProductoComponent implements OnInit {
      this.producto.categoria!
     ))
     this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
-      console.log(resp)
       this.cargando=false;
+      //this.onPropagar(this.orden)
     })
    }
-
+  //  onPropagar(orden:OrdenModel) {
+  //   console.log('entro aqui')
+  //   this.propagar.emit(orden);
+  // }
 }

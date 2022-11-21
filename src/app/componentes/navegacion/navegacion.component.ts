@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class NavegacionComponent implements OnInit {
   cantidadArticulos:number=1;
-  constructor(private router:Router) { }
-
+  constructor(private router:Router) {}
+  
   ngOnInit(): void {
   }
   verCarrito(){

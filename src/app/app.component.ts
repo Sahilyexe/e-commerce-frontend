@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OrdenModel } from './model/orden';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'e-commerce';
+  // procesaPropagar(mensaje:OrdenModel) {
+  //   console.log('mensaje'+mensaje);
+  // }
+
 }
