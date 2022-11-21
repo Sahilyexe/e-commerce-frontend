@@ -20,14 +20,27 @@ export class ListaProductosComponent implements OnInit {
     this.productos=this._servicioProducto.getProductos();
 }
   ngOnInit(): void {
-    this._servicioSesion.crearSesion(this.orden).subscribe(resp =>{
-
-     //let respuestaArray:SesionModel = Object.assign(resp)
-     console.log(resp)
-     //sessionStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',respuestaArray.id!)
-    },error=>{console.log(error.message)})
-   
+   let sesion =  sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
+  if(sesion == null || sesion == undefined || sesion == '') {
+      this.orden.idOrden=this.generarAleatorio();
+      this._servicioSesion.crearSesion(JSON.stringify(this.orden)).subscribe(resp =>{
+      this.orden = Object.assign(resp)
+      sessionStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',this.orden.idOrden)
+     })
+  }
+     
   }
  
+  generarAleatorio(){
+    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result1= ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < 100; i++ ) {
+        result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result1;
+
+ }
   
 }

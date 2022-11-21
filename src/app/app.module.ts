@@ -15,6 +15,8 @@ import { ListaProductosComponent } from './componentes/lista-productos/lista-pro
 import { FinalizarCompraComponent } from './componentes/finalizar-compra/finalizar-compra.component';
 import { CarritoDinamicComponent } from './componentes/carrito-dynamic/carrito.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
+import { LoadingComponent } from './componentes/loading/loading.component';
+import { AlertComponent } from './componentes/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,9 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
     ListaProductosComponent,
     FinalizarCompraComponent,
     CarritoDinamicComponent,
-    CarritoComponent
-    
+    CarritoComponent,
+    AlertComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
