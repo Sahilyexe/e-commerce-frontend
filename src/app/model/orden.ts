@@ -1,3 +1,4 @@
+import { PersonaModel } from './persona';
 import { ProductoModel } from './producto';
 export class OrdenModel{
 
@@ -8,5 +9,6 @@ export class OrdenModel{
     velocidadEntrega? = "";
     direccionEntrega? = "";
     elementos: ProductoModel[]=[];
+    persona: PersonaModel= new PersonaModel();
     constructor(){}
 }
