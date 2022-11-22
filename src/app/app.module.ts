@@ -19,6 +19,7 @@ import { LoadingComponent } from './componentes/compartido/loading/loading.compo
 import { AlertComponent } from './componentes/compartido/alert/alert.component';
 import { CargandoBotonComponent } from './componentes/compartido/cargando-boton/cargando-boton.component';
 import { ResumenComponent } from './componentes/compartido/resumen/resumen.component';
+import { NoHayNadaAquiComponent } from './componentes/compartido/no-hay-nada-aqui/no-hay-nada-aqui.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ResumenComponent } from './componentes/compartido/resumen/resumen.compo
     AlertComponent,
     LoadingComponent,
     CargandoBotonComponent,
-    ResumenComponent
+    ResumenComponent,
+    NoHayNadaAquiComponent
   ],
   imports: [
     BrowserModule,

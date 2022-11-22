@@ -15,13 +15,17 @@ export class CarritoComponent implements OnInit {
  total:number = 0;
  cargando:boolean = false;
   constructor(private _servicioCarrito: OrdenService) {
+    this.cargando=true;
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
           this.orden = Object.assign(this.orden,resp['orden'])
           this.orden.elementos.forEach((elemento=>{
              this.total = this.total+ Number(elemento.precio!)
              console.log(this.total)
+           
+             
           }))
+          this.cargando= false;
      })
    }
 
