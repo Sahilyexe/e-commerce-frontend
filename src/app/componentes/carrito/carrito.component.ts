@@ -41,4 +41,10 @@ export class CarritoComponent implements OnInit {
         this.cargando=false;
     })
    }
+   actualizar(){
+    this.cargando=true;
+    this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
+      this.cargando=false;
+    })
+  }
 }

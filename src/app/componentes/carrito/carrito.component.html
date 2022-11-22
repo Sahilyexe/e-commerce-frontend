@@ -17,7 +17,10 @@
         </div>
         <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}
         <div class="row">
-          <input type="number" class="form-control" min="1" >
+          <div class="form-floating mb-3 componentes">
+            <input type="number"  class="form-control cantidad" (change)="actualizar()" [(ngModel)]="elemento.cantidadCompra" step="1" min="1" [max]="elemento.cantidadStock!" id="cantidadCompra" placeholder="Primer nombre" required>
+            <label for="cantidadCompra">Cantidad</label>
+          </div>
         </div>
         </div>
         <div class="col">{{elemento.descripcion |titlecase}}</div>

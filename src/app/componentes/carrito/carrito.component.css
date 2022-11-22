@@ -6,3 +6,8 @@ img{
     width:100px;
     height: 100px;
 }
+.cantidad{
+    max-width: 100px;
+    
+    margin: 5px;
+}

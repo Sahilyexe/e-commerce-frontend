@@ -20,7 +20,10 @@
         </div>
        
         </div>
-        <div> <input type="number" class="form-control cantidad" step="1" min="1" value="1" [max]="producto.cantidadStock"></div>
+        <div class="form-floating mb-3 componentes">
+          <input type="number"  class="form-control cantidad"  [(ngModel)]="producto.cantidadCompra" step="1" min="1" [max]="producto.cantidadStock!" id="cantidadCompra" placeholder="Primer nombre" required>
+          <label for="cantidadCompra">Cantidad</label>
+        </div>
         <div class="row">
           <div class="display-botones">
           <button (click)="agregarCarrito()"
