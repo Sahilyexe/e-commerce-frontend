@@ -10,6 +10,10 @@
     font-size: 36px;
     margin :5px;
 }
+.separacion-navbar{
+    margin-top: 20px;
+}
+
 
 input:invalid{
     border: red solid 3px;

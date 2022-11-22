@@ -1,0 +1,31 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+  }
+  
+  .componentes{
+    margin: 5px;
+    width: 32%;
+}
+
+.componentes-checkout{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.descricion
+{
+    margin: 10px;
+    width: 100%;
+}
+.card{
+    width: 900px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
