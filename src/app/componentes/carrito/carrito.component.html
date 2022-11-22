@@ -16,15 +16,22 @@
           </figure> 
         </div>
         <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}
-        <div class="row">
-          <div class="form-floating mb-3 componentes">
-            <input type="number"  class="form-control cantidad" (change)="actualizar()" [(ngModel)]="elemento.cantidadCompra" step="1" min="1" [max]="elemento.cantidadStock!" id="cantidadCompra" placeholder="Primer nombre" required>
-            <label for="cantidadCompra">Cantidad</label>
-          </div>
         </div>
-        </div>
-        <div class="col">{{elemento.descripcion |titlecase}}</div>
+        <div class="col-4">{{elemento.descripcion |titlecase}}</div>
         <div class="col" >{{elemento.precio |currency}}</div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="cantidadCompra">Cantidad</label>
+            <input type="number" readonly class="form-control cantidad" (change)="actualizar()" [(ngModel)]="elemento.cantidadCompra" step="1" min="1" [max]="elemento.cantidadStock!" id="cantidadCompra" placeholder="Primer nombre" required>
+         
+          </div>
+          <span class="material-symbols-outlined btn" (click)="add(elemento)">
+            add_circle
+            </span>
+            <span class="material-symbols-outlined btn" (click)="resta(elemento)">
+              remove
+              </span>
+        </div>
         <div class="col"><button (click)="EliminarCarrito(elemento)"
           class="btn btn-danger centrar-horizontal">
           

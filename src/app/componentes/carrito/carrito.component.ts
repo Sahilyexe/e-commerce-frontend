@@ -47,4 +47,16 @@ export class CarritoComponent implements OnInit {
       this.cargando=false;
     })
   }
+  add(id:ProductoModel){
+   
+    if(id.cantidadCompra!<id.cantidadStock!){
+    this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!+1
+    }
+    
+  }
+  resta(id:ProductoModel){
+    if(id.cantidadCompra!>1){
+    this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!-1
+    }
+  }
 }
