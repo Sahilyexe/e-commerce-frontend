@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container">
 
    <div class="card">
     <div class="card-header">
@@ -7,38 +7,40 @@
       <div class="contenedor">
     <div class="componentes-checkout">
         <div class="form-floating mb-3 componentes" >
-            <input type="text" class="form-control " id="Identificacion" [(ngModel)]="producto.id" placeholder="Identificacion">
-            <label for="Identificacion">Identificacion</label>
+            <input type="text" class="form-control " id="Identificacion" [(ngModel)]="producto.id" placeholder="Identificacion" required>
+            <label for="Identificacion">Identificación</label>
           </div>
         <div class="form-floating mb-3 componentes">
-            <input type="text" class="form-control " id="nombre" [(ngModel)]="producto.nombre" placeholder="nombre">
+            <input type="text" class="form-control " id="nombre" [(ngModel)]="producto.nombre" placeholder="nombre" required>
             <label for="nombre">Nombre</label>
           </div>
           <div class="form-floating componentes">
-            <input type="number" class="form-control componentes-formulario" [(ngModel)]="producto.categoria" id="Stock" placeholder="Categoria">
-            <label for="Categoria">Categoria</label>
+            <input type="number" class="form-control componentes-formulario" [(ngModel)]="producto.categoria" id="Stock" placeholder="Categoria"  required>
+            <label for="Categoria">Categoría</label>
           </div>
     </div>
       <div class="form-floating descricion">
-        <input type="text" class="form-control tamano-grande componentes-formulario"  [(ngModel)]="producto.descripcion" id="descripcion" placeholder="descripcion">
-        <label for="descripcion">Descripcion</label>
+        <input type="text" class="form-control tamano-grande componentes-formulario"  [(ngModel)]="producto.descripcion" id="descripcion" placeholder="descripcion" required>
+        <label for="descripcion">Descripción</label>
       </div>
       <div class="componentes-checkout">
       <div class="form-floating componentes">
-        <input type="number" class="form-control componentes-formulario" id="precio" [(ngModel)]="producto.precio" placeholder="precio">
+        <input type="number" class="form-control componentes-formulario" id="precio" [min]="1" [(ngModel)]="producto.precio" step="0.1" placeholder="precio" required>
         <label for="precio">Precio</label>
       </div>
       <div class="form-floating componentes">
-        <input type="number" class="form-control componentes-formulario" [(ngModel)]="producto.cantidadStock" id="Stock" placeholder="Stock">
+        <input type="number" class="form-control componentes-formulario" [min]="1" [(ngModel)]="producto.cantidadStock" id="Stock" placeholder="Stock" required>
         <label for="Stock">Cantidad en Stock</label>
       </div>
     
       <div class=" mb-3 componentes">
-        <input type="file" class="form-control" id="inputGroupFile02" [(ngModel)]="producto.imagen" accept="image/png, image/gif, image/jpeg">
+        <input type="file" class="form-control" id="inputGroupFile02" [(ngModel)]="producto.imagen" accept="image/png, image/gif, image/jpeg" required>
         <!-- <label class="input-group-text" for="inputGroupFile02">Cargar imagen</label> -->
       </div>
       </div>
    </div>
-   <button type="submit" class="btn btn-success">Crear</button>
+   <button type="submit" class="btn btn-success centrar-horizontal centrar-texto"><span class="material-symbols-outlined">
+    save
+    </span>Crear</button>
 </div>
 </div>

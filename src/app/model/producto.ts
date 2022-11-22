@@ -10,5 +10,8 @@ export class ProductoModel{
     fechaIngreso?: string = "";
     imagen: string="";
     thumbnail: string="";
-    constructor(){}
+    constructor(){
+        this.cantidadCompra = 1;
+        this.cantidadStock = 1;
+    }
 }
