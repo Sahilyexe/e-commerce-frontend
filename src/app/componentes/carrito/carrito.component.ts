@@ -51,12 +51,18 @@ export class CarritoComponent implements OnInit {
    
     if(id.cantidadCompra!<id.cantidadStock!){
     this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!+1
-    }
+   const a=document.getElementById('cantidadCompraCarrito'); 
+   a?.dispatchEvent(new Event("change"))
+
+  }
     
   }
   resta(id:ProductoModel){
     if(id.cantidadCompra!>1){
     this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!-1
-    }
+    const a=document.getElementById('cantidadCompraCarrito'); 
+    a?.dispatchEvent(new Event("change"))
+   
+  }
   }
 }

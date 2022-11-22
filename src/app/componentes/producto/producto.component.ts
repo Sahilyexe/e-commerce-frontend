@@ -52,4 +52,18 @@ export class ProductoComponent implements OnInit {
   seguirComprando(){
     this.router.navigate(['productos'])
   }
+  add(id:ProductoModel){
+   
+    if(id.cantidadCompra!<id.cantidadStock!){
+    this.producto.cantidadCompra=Number(this.producto.cantidadCompra!)+1
+    }
+
+  }
+    
+  
+  resta(id:ProductoModel){
+    if(id.cantidadCompra!>1){
+      this.producto.cantidadCompra=Number(this.producto.cantidadCompra!)-1
+    }
+  }
 }

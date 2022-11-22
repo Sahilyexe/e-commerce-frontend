@@ -15,20 +15,20 @@
             <figcaption>{{elemento.nombre | titlecase}}</figcaption>
           </figure> 
         </div>
-        <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}
+        <div class="col-1"><strong>ID:</strong>{{elemento.id |titlecase}}
         </div>
-        <div class="col-4">{{elemento.descripcion |titlecase}}</div>
+        <div class="col">{{elemento.descripcion |titlecase}}</div>
         <div class="col" >{{elemento.precio |currency}}</div>
         <div class="col">
           <div class="mb-3">
             <label for="cantidadCompra">Cantidad</label>
-            <input type="number" readonly class="form-control cantidad" (change)="actualizar()" [(ngModel)]="elemento.cantidadCompra" step="1" min="1" [max]="elemento.cantidadStock!" id="cantidadCompra" placeholder="Primer nombre" required>
+            <input type="number" readonly class="form-control cantidad" (change)="actualizar()" [(ngModel)]="elemento.cantidadCompra" step="1" min="1" [max]="elemento.cantidadStock!" id="cantidadCompraCarrito" placeholder="Primer nombre" required>
          
           </div>
-          <span class="material-symbols-outlined btn" (click)="add(elemento)">
+          <span class="material-symbols-outlined btn btn-warning incrementadores" (click)="add(elemento)">
             add_circle
             </span>
-            <span class="material-symbols-outlined btn" (click)="resta(elemento)">
+            <span class="material-symbols-outlined btn btn-primary incrementadores" (click)="resta(elemento)">
               remove
               </span>
         </div>
