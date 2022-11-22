@@ -15,7 +15,11 @@
             <figcaption>{{elemento.nombre | titlecase}}</figcaption>
           </figure> 
         </div>
-        <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}</div>
+        <div class="col"><strong>ID:</strong>{{elemento.id |titlecase}}
+        <div class="row">
+          <input type="number" class="form-control" min="1" >
+        </div>
+        </div>
         <div class="col">{{elemento.descripcion |titlecase}}</div>
         <div class="col" >{{elemento.precio |currency}}</div>
         <div class="col"><button (click)="EliminarCarrito(elemento)"

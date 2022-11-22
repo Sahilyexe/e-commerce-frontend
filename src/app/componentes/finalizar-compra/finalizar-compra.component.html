@@ -1,4 +1,7 @@
 <div class="container contenedor row">
+  <div *ngIf="deshabilitarFormario">
+    <app-alert [tipoAlerta]="'Info'" [mensaje]="'Llene los campos señalados para completar la compra'"></app-alert>
+    </div>
   <div class="col-8">
     <div class="accordion" id="accordionExample" >
         <div class="accordion-item">
@@ -12,11 +15,11 @@
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body componentes-checkout">
               <div class="form-floating mb-3 componentes">
-                <input type="tel" class="form-control" id="telefono" [(ngModel)]="orden.persona.telefono" placeholder="teléfono" required>
+                <input type="tel" class="form-control" id="telefono" (focusout)="actualizar()"  [(ngModel)]="orden.persona.telefono" placeholder="teléfono" required>
                 <label for="telefono">Teléfono o Whatsapp</label>
                 </div>
                 <div class="form-floating mb-3 componentes">
-                  <input type="email" class="form-control" id="email" [(ngModel)]="orden.persona.correo" placeholder="email" required>
+                  <input type="email" class="form-control" id="email" (focusout)="actualizar()"  [(ngModel)]="orden.persona.correo" placeholder="email" required>
                   <label for="email">Correo electrónico (e-mail)</label>
               </div>
           </div>
@@ -34,36 +37,36 @@
              
               <div class="componentes-checkout">
                 <div class="form-floating mb-3 componentes">
-                  <input type="text" class="form-control" [(ngModel)]="orden.persona.primerNombre" id="primerNombre" placeholder="Primer nombre" required>
+                  <input type="text" (focusout)="actualizar()" class="form-control" [(ngModel)]="orden.persona.primerNombre" id="primerNombre" placeholder="Primer nombre" required>
                   <label for="primerNombre">Primer nombre</label>
                 </div>
                 <div class="form-floating mb-3 componentes">
-                  <input type="text" class="form-control " id="SegundoNombre" [(ngModel)]="orden.persona.segundoNombre" placeholder="Segundo nombre">
+                  <input type="text" (focusout)="actualizar()"  class="form-control " id="SegundoNombre" [(ngModel)]="orden.persona.segundoNombre" placeholder="Segundo nombre">
                   <label for="SegundoNombre">Segundo nombre</label>
                 </div>
               </div>
               <div class="componentes-checkout">
                 <div class="form-floating mb-3 componentes">
-                  <input type="text" class="form-control " id="PrimerApellido" [(ngModel)]="orden.persona.primerApellido" placeholder="Primer apellido" required>
+                  <input type="text" (focusout)="actualizar()"  class="form-control " id="PrimerApellido" [(ngModel)]="orden.persona.primerApellido" placeholder="Primer apellido" required>
                   <label for="PrimerApellido">Primer apellido</label>
                 </div>
                 <div class="form-floating mb-3 componentes">
-                  <input type="text" class="form-control " id="segundoApellido" [(ngModel)]="orden.persona.segundoApellido" placeholder="Segundo apellido">
+                  <input type="text" (focusout)="actualizar()"  class="form-control " id="segundoApellido" [(ngModel)]="orden.persona.segundoApellido" placeholder="Segundo apellido">
                   <label for="segundoApellido">Segundo apellido</label>
                 </div>
               </div>
               <div class="componentes-checkout">
                 <div class="form-floating mb-3 direccion">
-                  <input type="text" class="form-control" id="direccion" [(ngModel)]="orden.persona.direccion" placeholder="Dirección" required>
+                  <input type="text" (focusout)="actualizar()"  class="form-control" id="direccion" [(ngModel)]="orden.persona.direccion" placeholder="Dirección" required>
                   <label for="direccion">Dirección</label>
                 </div>
               </div>
               <div class="componentes-checkout">
-                <select class="form-select form-control componentes" [(ngModel)]="orden.persona.pais" aria-label="Default select example" required>
+                <select class="form-select form-control componentes" (focusout)="actualizar()"  [(ngModel)]="orden.persona.pais" aria-label="Default select example" required>
                   <option selected disabled>Selecciona el país</option>
                   <option value="1">Panamá</option>
                 </select>
-                <select class="form-select form-control componentes" [(ngModel)]="orden.persona.provincia" aria-label="Default select example" required>
+                <select class="form-select form-control componentes" (focusout)="actualizar()"  [(ngModel)]="orden.persona.provincia" aria-label="Default select example" required>
                   <option selected disabled>Selecciona la provincia</option>
                   <option value="1">Panamá</option>
                   <option value="1">Bocas del Toro</option>
@@ -93,17 +96,9 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Efectivo
-                </label>
-              </div>
-              <div class="form-check" >
-                <input class="form-check-input" disabled type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                <label class="form-check-label" for="flexRadioDefault2">
-                Paypal 
-                </label>
+              <div *ngFor="let opcion of metodoPago">
+                <label [for]="'metodoPago'+opcion" >{{opcion}}</label>
+                <input type="radio" [(ngModel)]="orden.metodoPago" [disabled]="opcion!=='Efectivo'" [value]="opcion"  class="form-check-input" [id]="'metodoPago'+opcion" name="metodoPago" required>
               </div>
             </div>
           </div>
@@ -112,7 +107,17 @@
       </div>
     
     </div>
-    <button type="button" class="btn btn-success contenedor" >Pagar</button>
+    <button  class="btn btn-success contenedor" 
+    (click)="pagar()" 
+    [disabled]="validarCampos(orden.metodoPago) 
+             || validarCampos(orden.persona.primerNombre)
+             || validarCampos(orden.persona.primerApellido)
+             || validarCampos(orden.persona.telefono)
+             || validarCampos(orden.persona.direccion)
+             || validarCampos(orden.persona.pais)
+             || validarCampos(orden.persona.provincia)"
+              type="submit" 
+    >Pagar</button>
     
 </div>
 <div class="col-4">

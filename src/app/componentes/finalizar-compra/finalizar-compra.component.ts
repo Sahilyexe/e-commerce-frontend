@@ -13,6 +13,9 @@ export class FinalizarCompraComponent implements OnInit {
   producto : ProductoModel= new ProductoModel();
   productos: ProductoModel[]=[]
   total:number = 0;
+  deshabilitarFormario:boolean =false;
+  metodoPago :string [] =  ['Efectivo','Paypal','Visa','Mastercard']
+
   constructor(private _servicioCarrito: OrdenService) {
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
     this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
@@ -26,5 +29,18 @@ export class FinalizarCompraComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  validarCampos(campo:any){
+    console.log('etro aqi')
+    if(campo ==='' || campo ===undefined || campo===null) return this.deshabilitarFormario=true;
+    else  {
+       
+          return this.deshabilitarFormario=false;
+    }  
+  }
+  pagar(){}
+  actualizar(){
+    this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
 
+    })
+  }
 }
