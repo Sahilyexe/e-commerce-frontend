@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule,HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { ProductosService } from './servicios/productos/productos.service';
 import { OrdenService } from './servicios/orden/orden.service';
@@ -21,6 +23,9 @@ import { CargandoBotonComponent } from './componentes/compartido/cargando-boton/
 import { ResumenComponent } from './componentes/compartido/resumen/resumen.component';
 import { NoHayNadaAquiComponent } from './componentes/compartido/no-hay-nada-aqui/no-hay-nada-aqui.component';
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+//import awsconfig from '../aws-exports';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +42,8 @@ import { CrearProductosComponent } from './componentes/crear-productos/crear-pro
     CargandoBotonComponent,
     ResumenComponent,
     NoHayNadaAquiComponent,
-    CrearProductosComponent
+    CrearProductosComponent,
+    IniciarSesionComponent
   ],
   imports: [
     BrowserModule,
