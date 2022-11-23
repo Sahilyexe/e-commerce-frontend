@@ -28,8 +28,8 @@ export class ProductosService {
    return producto;
   }
 crearProducto(producto:any){
-  const headers = new HttpHeaders();
-  headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
-  return this.http.post(`${environment.url}crearproducto`,producto,{headers: headers})
+  // const headers = new HttpHeaders();
+  // headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
+  return this.http.post(`${environment.url}crearproducto`,producto/*,{headers: headers}*/)
 }
 }
