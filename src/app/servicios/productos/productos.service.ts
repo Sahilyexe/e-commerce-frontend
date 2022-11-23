@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import * as productosJson from '../../../assets/productos.json';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import * as productosJson from '../../../assets/productos.json';
 export class ProductosService {
   producto = new ProductoModel();
   productos:ProductoModel [] =[];
-  constructor() { }
+  constructor( private http:HttpClient) { }
 
   getProductos(){
     this.productos = Object.assign(this.productos,productosJson)
@@ -25,5 +27,9 @@ export class ProductosService {
      }
    return producto;
   }
-
+crearProducto(producto:any){
+  const headers = new HttpHeaders();
+  headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
+  return this.http.post(`${environment.url}crearproducto`,producto,{headers: headers})
+}
 }

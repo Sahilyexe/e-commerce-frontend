@@ -15,7 +15,7 @@
             <label for="nombre">Nombre</label>
           </div>
           <div class="form-floating componentes">
-            <input type="number" class="form-control componentes-formulario" [(ngModel)]="producto.categoria" id="Stock" placeholder="Categoria"  required>
+            <input type="text" class="form-control componentes-formulario" [(ngModel)]="producto.categoria" id="Stock" placeholder="Categoria"  required>
             <label for="Categoria">Categoría</label>
           </div>
     </div>
@@ -39,7 +39,7 @@
       </div>
       </div>
    </div>
-   <button type="submit" class="btn btn-success centrar-horizontal centrar-texto"><span class="material-symbols-outlined">
+   <button type="submit" (click)="crearProducto()" class="btn btn-success centrar-horizontal centrar-texto"><span class="material-symbols-outlined">
     save
     </span>Crear</button>
 </div>
