@@ -23,7 +23,6 @@ import { CargandoBotonComponent } from './componentes/compartido/cargando-boton/
 import { ResumenComponent } from './componentes/compartido/resumen/resumen.component';
 import { NoHayNadaAquiComponent } from './componentes/compartido/no-hay-nada-aqui/no-hay-nada-aqui.component';
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { Amplify, Auth } from 'aws-amplify';
 
@@ -46,9 +45,7 @@ Amplify.configure(awsconfig);
     CargandoBotonComponent,
     ResumenComponent,
     NoHayNadaAquiComponent,
-    CrearProductosComponent,
-    IniciarSesionComponent
-  ],
+    CrearProductosComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule,AmplifyAuthenticatorModule
