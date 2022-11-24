@@ -1,6 +1,6 @@
 {
   "auth": {
-    "ecommerceaea55a8a": {
+    "ecommerce9b3396cc": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
