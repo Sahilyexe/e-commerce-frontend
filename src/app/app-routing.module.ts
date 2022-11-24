@@ -5,6 +5,8 @@ import { ListaProductosComponent } from './componentes/lista-productos/lista-pro
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { AdminGuard } from './compartido/admin.guard';
 
 const routes: Routes = [
   {path: 'producto/:id', component :ProductoComponent},
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'productos', pathMatch: 'full' },
   {path: 'finalizar-compra', component: FinalizarCompraComponent},
   {path: 'carrito', component: CarritoComponent},
-  {path: 'crear-producto', component: CrearProductosComponent}
+  {path: 'crear-producto', component: CrearProductosComponent , canActivate: [AdminGuard]},
+  {path: 'iniciar-sesion', component: IniciarSesionComponent},
+
 ];
 
 @NgModule({

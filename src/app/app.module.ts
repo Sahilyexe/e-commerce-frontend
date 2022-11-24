@@ -24,8 +24,12 @@ import { ResumenComponent } from './componentes/compartido/resumen/resumen.compo
 import { NoHayNadaAquiComponent } from './componentes/compartido/no-hay-nada-aqui/no-hay-nada-aqui.component';
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-//import awsconfig from '../aws-exports';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { Amplify, Auth } from 'aws-amplify';
 
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [
@@ -47,7 +51,7 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule
+    AppRoutingModule,FormsModule,HttpClientModule,AmplifyAuthenticatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
