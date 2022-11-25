@@ -19,12 +19,7 @@ export class CarritoComponent implements OnInit {
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
           this.orden = Object.assign(this.orden,resp['orden'])
-          this.orden.elementos.forEach((elemento=>{
-             this.total = this.total+ Number(elemento.precio!)
-             console.log(this.total)
-           
-             
-          }))
+          this.calcularTotalResumen()
           this.cargando= false;
      })
    }
@@ -38,6 +33,7 @@ export class CarritoComponent implements OnInit {
     this.orden.elementos.splice(this.orden.elementos.indexOf(id),1)
     console.log(this.orden.elementos)
     this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
+        this.calcularTotalResumen();
         this.cargando=false;
     })
    }
@@ -53,6 +49,7 @@ export class CarritoComponent implements OnInit {
     this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!+1
    const a=document.getElementById('cantidadCompraCarrito'); 
    a?.dispatchEvent(new Event("change"))
+   this.calcularTotalResumen();
 
   }
     
@@ -62,7 +59,16 @@ export class CarritoComponent implements OnInit {
     this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra=this.orden.elementos[this.orden.elementos.indexOf(id)].cantidadCompra!-1
     const a=document.getElementById('cantidadCompraCarrito'); 
     a?.dispatchEvent(new Event("change"))
-   
+    this.calcularTotalResumen();
   }
+  }
+  calcularTotalResumen(){
+    this.total=0
+    this.orden.elementos.forEach((elemento=>{
+      this.total = this.total+ (Number(elemento.precio!)*Number(elemento.cantidadCompra!))
+      console.log(this.total)
+    
+      
+   }))
   }
 }

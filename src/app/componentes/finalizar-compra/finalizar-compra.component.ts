@@ -20,10 +20,7 @@ export class FinalizarCompraComponent implements OnInit {
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
     this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
          this.orden = Object.assign(this.orden,resp['orden'])
-         this.orden.elementos.forEach((elemento=>{
-            this.total = this.total+ Number(elemento.precio!)
-            console.log(this.total)
-         }))
+         this.calcularTotalResumen();
     })
    }
 
@@ -42,5 +39,14 @@ export class FinalizarCompraComponent implements OnInit {
     this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
 
     })
+  }
+  calcularTotalResumen(){
+    this.total=0
+    this.orden.elementos.forEach((elemento=>{
+      this.total = this.total+ (Number(elemento.precio!)*Number(elemento.cantidadCompra!))
+      console.log(this.total)
+    
+      
+   }))
   }
 }
