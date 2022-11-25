@@ -13,23 +13,22 @@ export class ProductosService {
   constructor( private http:HttpClient) { }
 
   getProductos(){
-    this.productos = Object.assign(this.productos,productosJson)
-    return this.productos;
+    return this.http.get(`${environment.url}getProductos`)
   }
   getProducto(id:string){
-    this.getProductos();
-    let producto :ProductoModel=new ProductoModel();
-     for( let i= 0; i< this.productos.length;i++){
-         producto= this.productos[i];
-         if(producto.id == id){
-          return producto;
-        } 
-     }
-   return producto;
+    // this.getProductos();
+    // let producto :ProductoModel=new ProductoModel();
+    //  for( let i= 0; i< this.productos.length;i++){
+    //      producto= this.productos[i];
+    //      if(producto.id == id){
+    //       return producto;
+    //     } 
+    //  }
+   return this.http.get(`${environment.url}getProducto/${id}`);
   }
 crearProducto(producto:any){
-  // const headers = new HttpHeaders();
-  // headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
+   const headers = new HttpHeaders();
+   headers.append('Content-Type','multipart/form-data')
   return this.http.post(`${environment.url}crearproducto`,producto/*,{headers: headers}*/)
 }
 }

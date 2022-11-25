@@ -16,7 +16,10 @@ export class ListaProductosComponent implements OnInit {
   
   constructor(private _servicioProducto:ProductosService,
               private _servicioSesion: OrdenService) { 
-    this.productos=this._servicioProducto.getProductos();
+   this._servicioProducto.getProductos().subscribe(resp=>{
+    this.productos=Object.assign(this.productos,resp)
+    console.log(resp)
+    });
 }
   ngOnInit(): void {
    let sesion =  sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')

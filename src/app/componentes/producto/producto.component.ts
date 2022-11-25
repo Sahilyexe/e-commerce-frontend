@@ -22,7 +22,10 @@ export class ProductoComponent implements OnInit {
               private router:Router,
               private _servicioSesion: OrdenService){
               this.activateRoute.params.subscribe(params =>{
-              this.producto = this._servicioProducto.getProducto(params['id'])
+              this._servicioProducto.getProducto(params['id']).subscribe(resp=>{
+                this.producto = Object.assign(this.producto,resp)
+
+              })
             })
 
                }

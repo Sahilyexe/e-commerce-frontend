@@ -19,9 +19,26 @@ export class CrearProductosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  crearProducto(){
-  this._servicioProducto.crearProducto(JSON.stringify(this.producto)).subscribe(resp=>{
+  
+
+  async crearProducto(){
+    const inputFile:any = document.querySelector('#inputGroupFile02');
+
+    const base64URL:any = await encodeFileAsBase64URL(inputFile!.files[0]);
+    this.producto.imagen=base64URL;
+    console.log(this.producto.imagen)
+    this._servicioProducto.crearProducto(JSON.stringify(this.producto)).subscribe(resp=>{
     console.log(resp)
   })
   }
 }
+
+async function encodeFileAsBase64URL(file:any) {
+  return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.addEventListener('loadend', () => {
+          resolve(reader.result);
+      });
+      reader.readAsDataURL(file);
+  });
+};

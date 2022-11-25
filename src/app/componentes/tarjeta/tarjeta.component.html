@@ -1,6 +1,6 @@
 
       <div class="card tarjeta" style="width: 18rem;" (click)="verProducto()">
-        <img [src]="'../../assets/Images/'+producto.thumbnail" class="card-img-top" [alt]="producto.nombre|titlecase">
+        <img [src]="producto.imagen" class="card-img-top" [alt]="producto.nombre|titlecase">
         <div class="card-body">
          <h5  class="card-title">{{producto.nombre|titlecase}}</h5>
           <p class="card-text">{{producto.descripcion|titlecase}}</p>
