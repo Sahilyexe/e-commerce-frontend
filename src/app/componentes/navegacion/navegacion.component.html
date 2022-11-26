@@ -9,7 +9,7 @@
           </span>
      Tu tiendita</a>
      <div class="caja-carrito" (click)="verCarrito()">
-     <app-carrito-dynamic class="caja-carrito"></app-carrito-dynamic>
+     <app-carrito-dynamic *ngIf="authenticator.authStatus!='authenticated'" class="caja-carrito"></app-carrito-dynamic>
      </div>
     
       <form class="d-flex" role="search">

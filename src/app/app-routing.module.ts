@@ -4,7 +4,7 @@ import { FinalizarCompraComponent } from './componentes/finalizar-compra/finaliz
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
-import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
+import { CrearProductosComponent } from './componentes/admin/crear-productos/crear-productos.component';
 
 
 const routes: Routes = [

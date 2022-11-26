@@ -22,11 +22,12 @@ import { AlertComponent } from './componentes/compartido/alert/alert.component';
 import { CargandoBotonComponent } from './componentes/compartido/cargando-boton/cargando-boton.component';
 import { ResumenComponent } from './componentes/compartido/resumen/resumen.component';
 import { NoHayNadaAquiComponent } from './componentes/compartido/no-hay-nada-aqui/no-hay-nada-aqui.component';
-import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
+import { CrearProductosComponent } from './componentes/admin/crear-productos/crear-productos.component';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { Amplify, Auth } from 'aws-amplify';
 
 import awsconfig from './aws-exports';
+import { TableroComponent } from './componentes/admin/tablero/tablero.component';
 
 Amplify.configure(awsconfig);
 
@@ -45,7 +46,8 @@ Amplify.configure(awsconfig);
     CargandoBotonComponent,
     ResumenComponent,
     NoHayNadaAquiComponent,
-    CrearProductosComponent  ],
+    CrearProductosComponent,
+    TableroComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule,AmplifyAuthenticatorModule
