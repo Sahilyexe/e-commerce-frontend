@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carritoDynamic.component.css']
 })
 export class CarritoDinamicComponent implements OnInit {
-  cantidadArticulos:number=1;
+  cantidadArticulos:number=0;
   constructor() { }
 
   ngOnInit(): void {

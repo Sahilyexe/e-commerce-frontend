@@ -12,6 +12,7 @@ import awsExports from '../../aws-exports';
 })
 export class CrearProductosComponent implements OnInit {
  producto: ProductoModel = new ProductoModel()
+ cargando:boolean= false;
   constructor(private _servicioProducto:ProductosService,
                public authenticator: AuthenticatorService) { 
                 Amplify.configure(awsExports);
@@ -22,12 +23,14 @@ export class CrearProductosComponent implements OnInit {
   
 
   async crearProducto(){
+    this.cargando=true;
     const inputFile:any = document.querySelector('#inputGroupFile02');
 
     const base64URL:any = await encodeFileAsBase64URL(inputFile!.files[0]);
     this.producto.imagen=base64URL;
     console.log(this.producto.imagen)
     this._servicioProducto.crearProducto(JSON.stringify(this.producto)).subscribe(resp=>{
+      this.cargando=false;
     console.log(resp)
   })
   }

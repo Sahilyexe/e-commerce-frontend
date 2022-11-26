@@ -44,7 +44,10 @@
         </div>
         </div>
      </div>
-     <button type="submit" (click)="crearProducto()" class="btn btn-success centrar-horizontal centrar-texto"><span class="material-symbols-outlined">
+     <button type="submit" (click)="crearProducto()" class="btn btn-success centrar-horizontal centrar-texto">
+      <app-cargando-boton *ngIf="cargando"></app-cargando-boton>
+
+      <span class="material-symbols-outlined">
       save
       </span>Crear</button>
   </div>
