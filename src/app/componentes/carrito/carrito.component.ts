@@ -16,7 +16,7 @@ export class CarritoComponent implements OnInit {
  cargando:boolean = false;
   constructor(private _servicioCarrito: OrdenService) {
     this.cargando=true;
-    let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
+    let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
           this.orden = Object.assign(this.orden,resp['orden'])
           this.calcularTotalResumen()

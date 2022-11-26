@@ -24,7 +24,7 @@ export class ProductoComponent implements OnInit {
               this.activateRoute.params.subscribe(params =>{
               this._servicioProducto.getProducto(params['id']).subscribe(resp=>{
                 this.producto = Object.assign(this.producto,resp)
-                console.log(this.producto)
+                console.log
               })
             })
 
