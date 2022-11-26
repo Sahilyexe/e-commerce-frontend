@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
-import { OrdenService } from 'src/app/servicios/carrito/carrito.service';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-lista-productos',
@@ -15,7 +15,7 @@ export class ListaProductosComponent implements OnInit {
  // producto: ProductoModel= new ProductoModel();
   
   constructor(private _servicioProducto:ProductosService,
-              private _servicioSesion: OrdenService) { 
+              private _servicioSesion: CarritoService) { 
    this._servicioProducto.getProductos().subscribe(resp=>{
     this.productos=Object.assign(this.productos,resp)
     console.log(resp)

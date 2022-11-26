@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { Router } from '@angular/router';
-import { OrdenService } from 'src/app/servicios/carrito/carrito.service';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 import { OrdenModel } from 'src/app/model/orden';
 
 @Component({
@@ -13,7 +13,7 @@ export class TarjetaComponent implements OnInit {
  @Input() producto:ProductoModel=new ProductoModel();
  @Input() orden : OrdenModel = new OrdenModel();
   constructor(private router: Router,
-              private _servicioSesion: OrdenService) {}
+              private _servicioSesion: CarritoService) {}
 
   ngOnInit(): void {
     
