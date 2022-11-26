@@ -9,3 +9,8 @@
 .botones-tarjeta{
     margin: 5px;
 }
+
+.img-tarjeta{
+    width: 100%;
+    height: 250px;
+}
