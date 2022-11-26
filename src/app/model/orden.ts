@@ -3,7 +3,7 @@ import { ProductoModel } from './producto';
 export class OrdenModel{
 
     idOrden = "";
-    fechaOrden? = "";
+    fechaOrden?:any = "";
     idCliente?:string = "";
     metodoPago? = "";
     velocidadEntrega? = "";

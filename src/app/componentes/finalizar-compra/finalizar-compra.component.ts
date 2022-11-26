@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
 import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
+import { OrdenService } from 'src/app/servicios/orden/orden.service';
 
 @Component({
   selector: 'app-finalizar-compra',
@@ -15,9 +16,11 @@ export class FinalizarCompraComponent implements OnInit {
   total:number = 0;
   deshabilitarFormario:boolean =false;
   metodoPago :string [] =  ['Efectivo','Paypal','Visa','Mastercard']
-
-  constructor(private _servicioCarrito: CarritoService) {
-    let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
+  cargando:boolean = false;
+  compra_realizada= false;
+  constructor(private _servicioCarrito: CarritoService,
+              private _ordenService: OrdenService) {
+    let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
     this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
          this.orden = Object.assign(this.orden,resp['orden'])
          this.calcularTotalResumen();
@@ -34,7 +37,15 @@ export class FinalizarCompraComponent implements OnInit {
           return this.deshabilitarFormario=false;
     }  
   }
-  pagar(){}
+  pagar(){
+   this.cargando = true;
+   console.log(this.orden);
+   this.orden.fechaOrden= new Date();
+   this._ordenService.crearOrden(JSON.stringify(this.orden)).subscribe(resp=>{
+   this.cargando= false;
+   this.compra_realizada= true;
+   })
+  }
   actualizar(){
     this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
 

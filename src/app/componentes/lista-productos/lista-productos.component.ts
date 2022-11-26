@@ -12,12 +12,15 @@ import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 export class ListaProductosComponent implements OnInit {
   productos:ProductoModel[] = [];
   orden: OrdenModel = new OrdenModel();
+  cargando: boolean = false;
  // producto: ProductoModel= new ProductoModel();
   
   constructor(private _servicioProducto:ProductosService,
               private _servicioSesion: CarritoService) { 
+                this.cargando= true;
    this._servicioProducto.getProductos().subscribe(resp=>{
     this.productos=Object.assign(this.productos,resp)
+    this.cargando = false;
     console.log(resp)
     });
 }

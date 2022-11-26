@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-no-hay-nada-aqui',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./no-hay-nada-aqui.component.css']
 })
 export class NoHayNadaAquiComponent implements OnInit {
-
+  @Input() texto = ''
   constructor() { }
 
   ngOnInit(): void {

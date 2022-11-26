@@ -2,7 +2,7 @@
   <app-loading *ngIf="cargando"></app-loading>
     <div class="col-8">
       <div class="separado" *ngIf="orden.elementos.length===0">
-        <app-no-hay-nada-aqui></app-no-hay-nada-aqui>
+        <app-no-hay-nada-aqui [texto]="'No has agregado nada al carrito!'"></app-no-hay-nada-aqui>
 
       </div>
 

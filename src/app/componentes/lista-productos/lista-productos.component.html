@@ -1,4 +1,5 @@
 <div class="container contenedor">
+    <app-loading *ngIf="cargando"></app-loading>
     <app-tarjeta *ngFor="let producto of productos"  [producto]="producto" [orden]="orden">
     </app-tarjeta>  
 </div>

@@ -2,7 +2,9 @@
   <div *ngIf="deshabilitarFormario">
     <app-alert [tipoAlerta]="'Info'" [mensaje]="'Llene los campos señalados para completar la compra'"></app-alert>
     </div>
-  <div class="col-8">
+    <app-no-hay-nada-aqui [texto]="'Gracias por su compra!'" *ngIf="compra_realizada"> </app-no-hay-nada-aqui>
+
+  <div class="col-8" *ngIf="!compra_realizada">
     <div class="accordion" id="accordionExample" >
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -107,7 +109,7 @@
       </div>
     
     </div>
-    <button  class="btn btn-success contenedor" 
+    <button  class="btn btn-success contenedor centrar-horizontal centrar-texto" 
     (click)="pagar()" 
     [disabled]="validarCampos(orden.metodoPago) 
              || validarCampos(orden.persona.primerNombre)
@@ -116,11 +118,15 @@
              || validarCampos(orden.persona.direccion)
              || validarCampos(orden.persona.pais)
              || validarCampos(orden.persona.provincia)"
-              type="submit" 
-    >Pagar</button>
+             type="submit">
+             <app-cargando-boton *ngIf="cargando"></app-cargando-boton>
+             <span class="material-symbols-outlined">
+              autopay
+              </span>
+              &nbsp; Pagar</button>
     
 </div>
-<div class="col-4">
+<div class="col-4" *ngIf="!compra_realizada">
   <app-resumen [mostrarBoton]="false" [totalPedido]="total"></app-resumen>
 </div>
 </div>
