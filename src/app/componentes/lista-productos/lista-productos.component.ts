@@ -22,12 +22,12 @@ export class ListaProductosComponent implements OnInit {
     });
 }
   ngOnInit(): void {
-   let sesion =  sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
+   let sesion =  localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
   if(sesion == null || sesion == undefined || sesion == '') {
       this.orden.idOrden=this.generarAleatorio().replace(' ','');
       this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp =>{
       this.orden = Object.assign(resp)
-      sessionStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',this.orden.idOrden)
+      localStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',this.orden.idOrden)
      })
   }
      

@@ -31,7 +31,7 @@ export class ProductoComponent implements OnInit {
                }
 
   ngOnInit(): void {
-    let id=sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY');
+    let id=localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY');
     this._servicioSesion.obtenerCarrito(id?.replace(' ','')).subscribe((resp:any)=>{
       this.orden=Object.assign(this.orden,resp['orden'])
      
