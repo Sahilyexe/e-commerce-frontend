@@ -14,14 +14,8 @@ export class OrdenService {
     console.log('se levanta el servicio')
    }
   
- actualizarListaCarrito(sesion:any){
-  const headers = new HttpHeaders();
-  headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
-  return this.http.post(`${environment.url}crearsesion`,sesion,{headers:headers})
- }
- obtenerCarrito(id:any){
-  const headers = new HttpHeaders();
-  headers.append('Access-Control-Allow-Origin','*').append('Access-Control-Allow-Methods','OPTIONS')
-  return this.http.get(`${environment.url}obtenerOrden/${id}`,{headers:headers})
+ crearOrden(orden:any){
+  
+  return this.http.post(`${environment.url}crearOrden`,orden)
  }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit ,Output, EventEmitter } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from '../../servicios/productos/productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OrdenService } from 'src/app/servicios/orden/orden.service';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 import { OrdenModel } from 'src/app/model/orden';
 
 @Component({
@@ -20,7 +20,7 @@ export class ProductoComponent implements OnInit {
   constructor(private _servicioProducto:ProductosService,
               private activateRoute: ActivatedRoute,
               private router:Router,
-              private _servicioSesion: OrdenService){
+              private _servicioSesion: CarritoService){
               this.activateRoute.params.subscribe(params =>{
               this._servicioProducto.getProducto(params['id']).subscribe(resp=>{
                 this.producto = Object.assign(this.producto,resp)

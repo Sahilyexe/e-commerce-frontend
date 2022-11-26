@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { ProductosService } from './servicios/productos/productos.service';
-import { OrdenService } from './servicios/orden/orden.service';
+import { CarritoService } from './servicios/carrito/carrito.service';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';

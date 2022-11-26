@@ -9,8 +9,6 @@ export class ProductoModel{
     categoria?:string = "";
     fechaIngreso?: string = "";
     imagen: string="";
-    thumbnail: string="";
-    isBase64Encoded?: true;
     constructor(){
         this.cantidadCompra = 1;
         this.cantidadStock = 1;

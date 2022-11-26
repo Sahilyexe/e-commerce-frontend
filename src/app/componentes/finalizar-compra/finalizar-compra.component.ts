@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
-import { OrdenService } from 'src/app/servicios/orden/orden.service';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-finalizar-compra',
@@ -16,7 +16,7 @@ export class FinalizarCompraComponent implements OnInit {
   deshabilitarFormario:boolean =false;
   metodoPago :string [] =  ['Efectivo','Paypal','Visa','Mastercard']
 
-  constructor(private _servicioCarrito: OrdenService) {
+  constructor(private _servicioCarrito: CarritoService) {
     let key = sessionStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
     this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
          this.orden = Object.assign(this.orden,resp['orden'])

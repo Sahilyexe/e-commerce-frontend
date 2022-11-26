@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
-import { OrdenService } from 'src/app/servicios/orden/orden.service';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-carrito',
@@ -14,7 +14,7 @@ export class CarritoComponent implements OnInit {
  productos: ProductoModel[]=[]
  total:number = 0;
  cargando:boolean = false;
-  constructor(private _servicioCarrito: OrdenService) {
+  constructor(private _servicioCarrito: CarritoService) {
     this.cargando=true;
     let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{

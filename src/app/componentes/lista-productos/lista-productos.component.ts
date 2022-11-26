@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrdenModel } from 'src/app/model/orden';
 import { ProductoModel } from 'src/app/model/producto';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
-import { OrdenService } from 'src/app/servicios/orden/orden.service';
+import { OrdenService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-lista-productos',

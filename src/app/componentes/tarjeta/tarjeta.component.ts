@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductoModel } from 'src/app/model/producto';
 import { Router } from '@angular/router';
-import { OrdenService } from 'src/app/servicios/orden/orden.service';
+import { OrdenService } from 'src/app/servicios/carrito/carrito.service';
 import { OrdenModel } from 'src/app/model/orden';
 
 @Component({
