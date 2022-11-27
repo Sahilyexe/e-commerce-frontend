@@ -22,8 +22,8 @@ export class FinalizarCompraComponent implements OnInit {
               private _ordenService: OrdenService) {
     let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
     this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
-         this.orden = Object.assign(this.orden,resp['orden'])
-         this.calcularTotalResumen();
+      this.orden = Object.assign(this.orden,resp);
+               this.calcularTotalResumen();
     })
    }
 
@@ -39,11 +39,13 @@ export class FinalizarCompraComponent implements OnInit {
   }
   pagar(){
    this.cargando = true;
-   console.log(this.orden);
+   this.orden.estado="colocada"
    this.orden.fechaOrden= new Date();
    this._ordenService.crearOrden(JSON.stringify(this.orden)).subscribe(resp=>{
    this.cargando= false;
    this.compra_realizada= true;
+   localStorage.removeItem('UYHGD%#YDBSJP(#U#UDNDY')
+   this.actualizar();
    })
   }
   actualizar(){

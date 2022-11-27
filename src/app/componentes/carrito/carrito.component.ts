@@ -18,7 +18,8 @@ export class CarritoComponent implements OnInit {
     this.cargando=true;
     let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
-          this.orden = Object.assign(this.orden,resp['orden'])
+      this.orden = Object.assign(this.orden,resp);   
+             console.log('carrito: '+this.orden)
           this.calcularTotalResumen()
           this.cargando= false;
      })
@@ -29,9 +30,10 @@ export class CarritoComponent implements OnInit {
   }
   EliminarCarrito(id:ProductoModel){
     this.cargando=true;
-    console.log(this.orden.elementos)
     this.orden.elementos.splice(this.orden.elementos.indexOf(id),1)
-    console.log(this.orden.elementos)
+    if(this.orden.elementos.length==0){
+      this.orden.estado="mirando"
+    }
     this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
         this.calcularTotalResumen();
         this.cargando=false;

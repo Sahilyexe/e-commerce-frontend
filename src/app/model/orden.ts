@@ -8,6 +8,7 @@ export class OrdenModel{
     metodoPago? = "";
     velocidadEntrega? = "";
     direccionEntrega? = "";
+    estado?= "";
     elementos: ProductoModel[]=[];
     persona: PersonaModel= new PersonaModel();
     constructor(){}

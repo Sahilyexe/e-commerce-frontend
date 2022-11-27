@@ -28,6 +28,7 @@ export class ListaProductosComponent implements OnInit {
    let sesion =  localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
   if(sesion == null || sesion == undefined || sesion == '') {
       this.orden.idOrden=this.generarAleatorio().replace(' ','');
+      this.orden.estado ="mirando"
       this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp =>{
       this.orden = Object.assign(resp)
       localStorage.setItem('UYHGD%#YDBSJP(#U#UDNDY',this.orden.idOrden)

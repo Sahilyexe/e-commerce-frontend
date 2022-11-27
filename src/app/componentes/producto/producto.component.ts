@@ -23,8 +23,8 @@ export class ProductoComponent implements OnInit {
               private _servicioSesion: CarritoService){
               this.activateRoute.params.subscribe(params =>{
               this._servicioProducto.getProducto(params['id']).subscribe(resp=>{
-                this.producto = Object.assign(this.producto,resp)
-                console.log
+                this.producto = Object.assign(this.producto,resp);
+                console.log(this.producto);
               })
             })
 
@@ -32,9 +32,11 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
     let id=localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY');
+    
     this._servicioSesion.obtenerCarrito(id?.replace(' ','')).subscribe((resp:any)=>{
-      this.orden=Object.assign(this.orden,resp['orden'])
-     
+      this.orden = Object.assign(this.orden,resp);
+      
+      console.log(this.orden)
     })
   }
   irFinalizarCompra(){
@@ -42,9 +44,11 @@ export class ProductoComponent implements OnInit {
   }
   agregarCarrito(){
     this.cargando=true;
-    this.orden.elementos.push(this.producto)
+    this.orden.elementos.push(this.producto);
+    this.orden.estado = "comprando";
     this._servicioSesion.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
       this.cargando=false;
+     
       //this.onPropagar(this.orden)
     })
    }
