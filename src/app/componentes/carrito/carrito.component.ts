@@ -19,15 +19,15 @@ export class CarritoComponent implements OnInit {
     let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
      this._servicioCarrito.obtenerCarrito(key?.replace(' ','')).subscribe((resp:any) =>{
       this.orden = Object.assign(this.orden,resp);   
-             console.log('carrito: '+this.orden)
+            //  console.log('carrito: '+this.orden)
           this.calcularTotalResumen()
           this.cargando= false;
      })
    }
 
   ngOnInit(): void {
-   
   }
+ 
   EliminarCarrito(id:ProductoModel){
     this.cargando=true;
     this.orden.elementos.splice(this.orden.elementos.indexOf(id),1)

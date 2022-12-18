@@ -15,7 +15,7 @@ export class OrdenService {
    }
   
  crearOrden(orden:any){
-  
-  return this.http.post(`${environment.url}crearOrden`,orden)
+  console.log(orden)
+  return this.http.post(`${environment.urlstatemashine}Comprar`,orden)
  }
 }

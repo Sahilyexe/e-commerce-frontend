@@ -10,12 +10,12 @@ export class ProductosService {
   constructor( private http:HttpClient) { }
 
   getProductos(){
-    return this.http.get(`${environment.url}getProductos`)
+    return this.http.get(`${environment.urlservicios}getProductos`)
   }
   getProducto(id:string){
-   return this.http.get(`${environment.url}getProducto/${id}`);
+   return this.http.get(`${environment.urlservicios}getProducto/${id}`);
   }
   crearProducto(producto:any){
-  return this.http.post(`${environment.url}crearproducto`,producto)
+  return this.http.post(`${environment.urlservicios}crearproducto`,producto)
 }
 }

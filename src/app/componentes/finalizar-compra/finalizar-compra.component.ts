@@ -41,16 +41,20 @@ export class FinalizarCompraComponent implements OnInit {
    this.cargando = true;
    this.orden.estado="colocada"
    this.orden.fechaOrden= new Date();
+   console.log(this.orden)
+   this.AcualizarOrdenAntesDeEnviar();
+   console.log(this.orden)
    this._ordenService.crearOrden(JSON.stringify(this.orden)).subscribe(resp=>{
+    console.log('respuesta:'+resp)
    this.cargando= false;
    this.compra_realizada= true;
    localStorage.removeItem('UYHGD%#YDBSJP(#U#UDNDY')
+ 
    this.actualizar();
    })
   }
   actualizar(){
     this._servicioCarrito.actualizarListaCarrito(JSON.stringify(this.orden)).subscribe(resp=>{
-
     })
   }
   calcularTotalResumen(){
@@ -61,5 +65,11 @@ export class FinalizarCompraComponent implements OnInit {
     
       
    }))
+  }
+  AcualizarOrdenAntesDeEnviar(){
+    this.orden.elementos.forEach((elemento=>{
+      elemento.imagen='';
+      elemento.strcantidadCompra=String(elemento.cantidadCompra);
+    }))
   }
 }

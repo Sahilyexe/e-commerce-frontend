@@ -6,6 +6,7 @@ export class ProductoModel{
     precio?:number = 0;
     cantidadStock?:number = 0;
     cantidadCompra?:number = 1;
+    strcantidadCompra?:string="";
     categoria?:string = "";
     fechaIngreso?: string = "";
     imagen: string="";
