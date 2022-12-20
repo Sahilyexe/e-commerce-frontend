@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  urlservicios:'https://4yvls6adfb.execute-api.us-east-1.amazonaws.com/Prod/',
-  urlstatemashine: 'https://dug66cdgpa.execute-api.us-east-1.amazonaws.com/Prod/'
+  urlservicios:'https://4wargzsy7g.execute-api.us-east-1.amazonaws.com/Prod/',
+  urlstatemashine: 'https://k5xfp1tcic.execute-api.us-east-1.amazonaws.com/Prod/'
 };
 
 /*

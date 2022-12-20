@@ -17,6 +17,7 @@ export class ProductoComponent implements OnInit {
   producto: ProductoModel= new ProductoModel()
   cargando: boolean = false;
   orden: OrdenModel = new OrdenModel();
+  cargandoProducto:boolean= true;
   constructor(private _servicioProducto:ProductosService,
               private activateRoute: ActivatedRoute,
               private router:Router,
@@ -24,7 +25,8 @@ export class ProductoComponent implements OnInit {
               this.activateRoute.params.subscribe(params =>{
               this._servicioProducto.getProducto(params['id']).subscribe(resp=>{
                 this.producto = Object.assign(this.producto,resp);
-                console.log(this.producto);
+                // console.log(this.producto);
+                this.cargandoProducto=false;
               })
             })
 
