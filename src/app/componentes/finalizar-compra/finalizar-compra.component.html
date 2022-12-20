@@ -2,7 +2,7 @@
   <div *ngIf="deshabilitarFormario">
     <app-alert [tipoAlerta]="'Info'" [mensaje]="'Llene los campos señalados para completar la compra'"></app-alert>
     </div>
-    <app-no-hay-nada-aqui [texto]="'Gracias por su compra!'" *ngIf="compra_realizada"> </app-no-hay-nada-aqui>
+    <app-no-hay-nada-aqui [texto]="'Gracias por su compra!, su id para dar seguimiento es: '+idOrden" *ngIf="compra_realizada"> </app-no-hay-nada-aqui>
 
   <div class="col-8" *ngIf="!compra_realizada">
     <div class="accordion" id="accordionExample" >

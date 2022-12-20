@@ -18,6 +18,7 @@ export class FinalizarCompraComponent implements OnInit {
   metodoPago :string [] =  ['Efectivo','Paypal','Visa','Mastercard']
   cargando:boolean = false;
   compra_realizada= false;
+  idOrden:string="";
   constructor(private _servicioCarrito: CarritoService,
               private _ordenService: OrdenService) {
     let key = localStorage.getItem('UYHGD%#YDBSJP(#U#UDNDY')
@@ -45,11 +46,10 @@ export class FinalizarCompraComponent implements OnInit {
    this.AcualizarOrdenAntesDeEnviar();
    console.log(this.orden)
    this._ordenService.crearOrden(JSON.stringify(this.orden)).subscribe(resp=>{
-    console.log('respuesta:'+resp)
    this.cargando= false;
    this.compra_realizada= true;
    localStorage.removeItem('UYHGD%#YDBSJP(#U#UDNDY')
- 
+   this.idOrden=resp.toString();
    this.actualizar();
    })
   }
