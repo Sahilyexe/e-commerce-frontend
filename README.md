@@ -20,7 +20,7 @@ To have a AWS account
 - move the file file aws-export.js to the folder app
 - rename the file from aws-export.ts
 - Ejecuta `ng build --configuration=production --aot=true`
-      - Ejecuta para subir al bucket `aws s3 cp ./dist/actualizacion-datos/ s3://<nombre bucket> --recursive`
+      - Ejecuta para subir al bucket `aws s3 cp ./dist/e-commerce/ s3://<nombre bucket> --recursive`
       - Abre el archivo `index.html`  
 
 ## Delete enviroment Amplify in AWS
