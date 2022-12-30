@@ -2,6 +2,7 @@
 
 Aplicación demo de eccomerce en la que te registras, luego inicias sesión creas productos. Cuando un cliente ve los productos, selecciona uno y lo agrega al carrito luego procede a ingresar sus datos para crear su orden. En ese momento se invoca el state machiness
 
+![diagrama-actualiza-datos.png](./Documentación/video.mp4)
 
 ## Pre-requisite
 To have a AWS account
@@ -20,7 +21,7 @@ To have a AWS account
 - move the file file aws-export.js to the folder app
 - rename the file from aws-export.ts
 - Ejecuta `ng build --configuration=production --aot=true`
-      - Ejecuta para subir al bucket `aws s3 cp ./dist/e-commerce/ s3://<nombre bucket> --recursive`
+      - Ejecuta para subir al bucket `aws s3 cp ./dist/e-commerce/ s3://e-commerce-us-east-1-103504445265 --recursive`
       - Abre el archivo `index.html`  
 
 ## Delete enviroment Amplify in AWS
