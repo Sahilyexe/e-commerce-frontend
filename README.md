@@ -2,7 +2,7 @@
 
 Aplicación demo de eccomerce en la que te registras, luego inicias sesión creas productos. Cuando un cliente ve los productos, selecciona uno y lo agrega al carrito luego procede a ingresar sus datos para crear su orden. En ese momento se invoca el state machiness
 
-![diagrama-actualiza-datos.png](./Documentación/video.mp4)
+
 
 ## Pre-requisite
 To have a AWS account
